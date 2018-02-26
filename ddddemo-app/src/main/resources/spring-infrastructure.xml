@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="properties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="ignoreResourceNotFound"><value>true</value></property>
+        <property name="fileEncoding" value="UTF-8" />
+        <property name="locations">
+            <array>
+                <value>classpath:app-infrastructure.properties</value>
+            </array>
+        </property>
+    </bean>
+    <context:property-placeholder file-encoding="UTF-8" properties-ref="properties" />
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="${mysql.jdbc.url}" />
+        <property name="username" value="${mysql.jdbc.username}" />
+        <property name="password" value="${mysql.jdbc.password}" />
+
+        <property name="filters" value="stat" />
+
+        <property name="maxActive" value="10" />
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="minIdle" value="1" />
+
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxOpenPreparedStatements" value="10" />
+    </bean>
+
+    <!-- 在使用mybatis时 spring使用sqlsessionFactoryBean 来管理mybatis的sqlsessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- mybatis配置文件路径 -->
+        <property name="configLocation" value="" />
+        <!-- 实体类映射文件路径,这里只有一个就写死了，多个可以使用mybatis/*.xml来替代 -->
+        <property name="mapperLocations" value="classpath:mapper/*.xml" />
+    </bean>
+
+
+    <!--动态代理实现 不用写dao的实现 -->
+    <bean id="MapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 这里的basePackage 指定了dao层接口路劲，这里的dao接口不用自己实现 -->
+        <property name="basePackage" value="org.cliff.ddd.demo.dao" />
+    </bean>
+</beans>
