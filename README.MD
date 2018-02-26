@@ -32,12 +32,12 @@ mysql.jdbc.username=root
 mysql.jdbc.password=123456
 ````
 
-### 4
+### 5
 启动类在start模块的
 org.cliff.ddd.demo.Application类
 
 
-### 5
+### 6
 应用启动后访问测试地址
 
 新增一个客户（随机生成）：
