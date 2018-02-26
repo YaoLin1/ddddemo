@@ -1,16 +1,15 @@
 package org.cliff.ddd.demo.command;
 
-import org.cliff.ddd.demo.domain.customer.convertor.extensionpoint.CustomerConvertorExtPt;
-import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
-import com.alibaba.sofa.extension.ExtensionExecutor;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.alibaba.sofa.command.Command;
 import com.alibaba.sofa.command.CommandExecutorI;
 import com.alibaba.sofa.dto.Response;
+import com.alibaba.sofa.extension.ExtensionExecutor;
+import com.alibaba.sofa.validator.ValidatorExecutor;
+import org.cliff.ddd.demo.domain.customer.convertor.extensionpoint.CustomerConvertorExtPt;
+import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
 import org.cliff.ddd.demo.dto.CustomerAddCmd;
 import org.cliff.ddd.demo.validator.extensionpoint.CustomerAddValidatorExtPt;
-import com.alibaba.sofa.validator.ValidatorExecutor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Command
 public class CustomerAddCmdExe implements CommandExecutorI<Response, CustomerAddCmd>{

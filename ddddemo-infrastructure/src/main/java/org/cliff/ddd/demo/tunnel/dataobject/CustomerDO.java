@@ -1,7 +1,6 @@
 package org.cliff.ddd.demo.tunnel.dataobject;
 
 import com.alibaba.sofa.repository.DataObject;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

@@ -1,15 +1,15 @@
 package org.cliff.ddd.demo.command.query;
 
-import org.cliff.ddd.demo.domain.customer.convertor.CustomerConvertor;
-import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
-import org.cliff.ddd.demo.domain.customer.repository.CustomerRepository;
-import org.cliff.ddd.demo.tunnel.dataobject.CustomerDO;
-import org.cliff.ddd.demo.tunnel.datatunnel.CustomerTunnelI;
-import org.cliff.ddd.demo.dto.CustomerFindByCriteriaQry;
-import org.cliff.ddd.demo.dto.clientobject.CustomerCO;
 import com.alibaba.sofa.command.Command;
 import com.alibaba.sofa.command.QueryExecutorI;
 import com.alibaba.sofa.dto.MultiResponse;
+import org.cliff.ddd.demo.domain.customer.convertor.CustomerConvertor;
+import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
+import org.cliff.ddd.demo.domain.customer.repository.CustomerRepository;
+import org.cliff.ddd.demo.dto.CustomerFindByCriteriaQry;
+import org.cliff.ddd.demo.dto.clientobject.CustomerCO;
+import org.cliff.ddd.demo.tunnel.dataobject.CustomerDO;
+import org.cliff.ddd.demo.tunnel.datatunnel.CustomerTunnelI;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;

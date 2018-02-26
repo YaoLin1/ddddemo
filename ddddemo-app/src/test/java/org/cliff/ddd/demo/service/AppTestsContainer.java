@@ -1,11 +1,10 @@
 package org.cliff.ddd.demo.service;
 
+import com.alibaba.sofa.logger.LoggerFactory;
+import com.alibaba.sofa.pandora.test.TestsContainer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.alibaba.sofa.logger.LoggerFactory;
-import com.alibaba.sofa.pandora.test.TestsContainer;
 
 public class AppTestsContainer {
 

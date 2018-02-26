@@ -1,10 +1,10 @@
 package org.cliff.ddd.demo.domain.customer.rule.extension;
 
-import org.cliff.ddd.demo.common.BizCode;
-import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
 import com.alibaba.sofa.extension.Extension;
 import com.alibaba.sofa.logger.Logger;
 import com.alibaba.sofa.logger.LoggerFactory;
+import org.cliff.ddd.demo.common.BizCode;
+import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
 import org.cliff.ddd.demo.domain.customer.rule.extensionpoint.CustomerRuleExtPt;
 
 @Extension(bizCode= BizCode.CGS)

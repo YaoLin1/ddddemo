@@ -1,12 +1,12 @@
 package org.cliff.ddd.demo.domain.customer.convertor;
 
-import org.cliff.ddd.demo.tunnel.dataobject.CustomerDO;
+import com.alibaba.sofa.common.ApplicationContextHelper;
+import com.alibaba.sofa.convertor.ConvertorI;
 import org.cliff.ddd.demo.domain.customer.entity.CustomerE;
 import org.cliff.ddd.demo.domain.customer.valueobject.CompanyType;
 import org.cliff.ddd.demo.dto.clientobject.CustomerCO;
 import org.cliff.ddd.demo.dto.clientobject.CustomerType;
-import com.alibaba.sofa.common.ApplicationContextHelper;
-import com.alibaba.sofa.convertor.ConvertorI;
+import org.cliff.ddd.demo.tunnel.dataobject.CustomerDO;
 import org.springframework.stereotype.Component;
 
 /**

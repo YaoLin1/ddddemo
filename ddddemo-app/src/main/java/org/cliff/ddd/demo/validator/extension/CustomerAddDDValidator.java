@@ -7,17 +7,16 @@
  */
 package org.cliff.ddd.demo.validator.extension;
 
-import org.cliff.ddd.demo.common.BizCode;
-import org.cliff.ddd.demo.dto.CustomerAddCmd;
-import org.cliff.ddd.demo.validator.CustomerAddValidator;
 import com.alibaba.sofa.exception.ParamException;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.alibaba.sofa.extension.Extension;
 import com.alibaba.sofa.logger.Logger;
 import com.alibaba.sofa.logger.LoggerFactory;
-import org.cliff.ddd.demo.validator.extensionpoint.CustomerAddValidatorExtPt;
 import com.alibaba.sofa.validator.ValidatorCompoiste;
+import org.cliff.ddd.demo.common.BizCode;
+import org.cliff.ddd.demo.dto.CustomerAddCmd;
+import org.cliff.ddd.demo.validator.CustomerAddValidator;
+import org.cliff.ddd.demo.validator.extensionpoint.CustomerAddValidatorExtPt;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * CustomerAddDDValidator
